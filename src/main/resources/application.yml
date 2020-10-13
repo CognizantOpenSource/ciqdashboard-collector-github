@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: dashboard-collector
+  data:
+    mongodb:
+      uri: mongodb://localhost/dashboard_collector
+github:
+  url: "https://api.github.com"
+  token: "ee4ad27c3877b7bda506179cb547b6ad2d5478bc"
+scheduler:
+  cron: 0 0/1 * * * *
+  enable: true
+server:
+  port: 9090
+logging:
+  level:
+    com.cognizant.dashboard.collectors.github.clients.GitHubClient: OFF
+
+  pattern:
+    console: '%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n'
