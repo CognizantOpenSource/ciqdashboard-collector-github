@@ -89,7 +89,7 @@ import java.util.Map;
         "permissions"
 })
 @Data
-@Document("github_repos")
+@Document("source_githubRepos")
 public class GitHubRepos {
 
     @JsonProperty("id")
