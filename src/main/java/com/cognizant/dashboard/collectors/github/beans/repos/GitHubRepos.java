@@ -89,7 +89,7 @@ import java.util.Map;
         "permissions"
 })
 @Data
-@Document("source_githubRepos")
+@Document(collection = "#{T(com.cognizant.dashboard.collectors.github.component.GitHubComponent).getCollectionName()}")
 public class GitHubRepos {
 
     @JsonProperty("id")

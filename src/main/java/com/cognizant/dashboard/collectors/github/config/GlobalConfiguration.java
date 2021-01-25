@@ -21,11 +21,11 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class GlobalConfiguration {
 
-    private static final String AUTHORIZATION = "Authorization";
+//    private static final String AUTHORIZATION = "Authorization";
     @Value("${github.url}")
     private String githubUrl;
-    @Value("Bearer ${github.token}")
-    private String githubToken;
+//    @Value("Bearer ${github.token}")
+//    private String githubToken;
 
 
     @Bean

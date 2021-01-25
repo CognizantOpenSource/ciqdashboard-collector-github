@@ -10,6 +10,7 @@ import com.cognizant.dashboard.collectors.github.service.GitHubDataService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 
@@ -19,11 +20,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.cognizant.dashboard.collectors.github.constants.Constants.SOURCE;
+
 @Component
 @Slf4j
 @RequiredArgsConstructor
 public class GitHubComponent {
 
+    private static String collectionName;
     @Autowired
     private GitHubClient gitHubClient;
     @Autowired
@@ -107,4 +111,12 @@ public class GitHubComponent {
         return allPullRequestList;
     }
 
+    @Value("${spring.data.mongodb.collection}")
+    public void setCollectionName(String collectionNameVariable) {
+        collectionName = SOURCE+collectionNameVariable;
+    }
+
+    public static String getCollectionName(){
+        return collectionName;
+    }
 }
