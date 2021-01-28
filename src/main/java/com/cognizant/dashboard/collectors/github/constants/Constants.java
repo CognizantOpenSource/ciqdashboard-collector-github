@@ -9,4 +9,5 @@ public class Constants {
 
     public static final int PAGE_INDEX=1;
     public static final int MAX_PER_PAGE_ITEMS=100;
+    public static final String SOURCE="source_github_";
 }
